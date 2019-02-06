@@ -3,22 +3,19 @@ import "./Primitive.css";
 import "./App.css";
 import axios from "axios";
 import Form from "./Form";
-import pokedexLogo from "./images/logo.svg";
+import ResultCard from "./ResultCard";
+import pokedexLogo from "./images/pin-drop.svg";
 
-const userInput = 1;
-
-const url = "https://pokeapi.co/api/v2/pokemon/" + userInput;
-// fetch(url)
-//   .then(response => response.json())
-//   .then(data => console.log(data));
+const url = "https://pokeapi.co/api/v2/pokemon/"; // PokeAPI Link
 
 class App extends Component {
   state = {
-    pokemons: []
+    pokemonName: "ditto",
+    pokemons: [1, 2, 3]
   };
 
   componentDidMount() {
-    axios.get(url).then(res => {
+    axios.get(url + this.state.pokemonName).then(res => {
       const pokemons = res.data;
       this.setState({ pokemons });
     });
@@ -26,12 +23,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className="center">
-        <img className="pokedex" src={pokedexLogo} alt="pokedex icon" />
-        <Form />
-        {/* <ul>
-          <li>{this.state.pokemons.name}</li>
-        </ul> */}
+      <div className="vertical-center">
+        <div className="flex-row">
+          <div className="flex-small vertical-center">
+            <img className="pokedex" src={pokedexLogo} alt="pokedex icon" />
+            <Form inputData={this.state.pokemonName} />
+          </div>
+          <div className="flex-small vertical-center">
+            <ResultCard
+              pokemonName={this.state.pokemonName}
+              pokemonData={this.state.pokemons}
+            />
+          </div>
+        </div>
       </div>
     );
   }

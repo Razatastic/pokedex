@@ -8025,6 +8025,11 @@ react-scripts@2.1.3:
   optionalDependencies:
     fsevents "1.2.4"
 
+react-typing@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-typing/-/react-typing-1.0.0.tgz#523a27025992c94e3604caf5280d6e880ebd2b46"
+  integrity sha512-sgXtl7l8FUA8qXH8gSYSiyoZNXvTACRxpOYtSicUANADOlMbDNfPTMUnqpLgl8zRGKH4xkGK0/hr1Xh1sUYy1A==
+
 react@^16.7.0:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.7.0.tgz#b674ec396b0a5715873b350446f7ea0802ab6381"

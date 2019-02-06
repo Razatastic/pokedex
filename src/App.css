@@ -1,6 +1,7 @@
 body {
   background-color: #8ec5fc;
   background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  height: 100vh;
 }
 
 .center {
@@ -24,13 +25,34 @@ body {
 .userInput {
   border-radius: 10px;
   font-size: 1em;
-  width: 25vw;
+  width: 20vw;
   text-align: center;
   border-color: white;
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .pokeball {
   width: 40px;
-  margin: 0px 0px 18px 18px;
+  margin: 0px 0px -14px 18px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.card {
+  background-color: white;
+  width: 36vw;
+  height: 80vh;
+  margin: 30px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.flex-small {
+  height: 100vh;
+  width: 50vw;
 }
