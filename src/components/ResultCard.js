@@ -9,7 +9,7 @@ class ResultCard extends Component {
     return (
       <div className="card">
         <h1>{name}</h1>
-        <img src={sprite} alt="pokemon-pic" />
+        <img className="poke-img" src={sprite} alt="pokemon-pic" />
         <ul>
           <li>
             <h5>ID: {id}</h5>
