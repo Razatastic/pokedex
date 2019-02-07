@@ -3,22 +3,33 @@ import { Typing } from "react-typing";
 import SearchBar from "./SearchBar";
 
 class Form extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = { userInput: "" };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ userInput: event.target.value });
+  }
+
+  handleSubmit(event) {
+    this.props.updatePokemon(this.state.userInput);
+    event.preventDefault();
   }
 
   render() {
-    const { inputData, handleOnClick } = this.props;
-
+    const { userInput } = this.state;
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label className="vertical-center greeting">
           <Typing keyDelay={75}>
             What Pokémon would you like to know about?
           </Typing>
         </label>
-        <SearchBar inputData={inputData} handleOnClick={handleOnClick} />
+        <SearchBar userInput={userInput} handleChange={this.handleChange} />
       </form>
     );
   }

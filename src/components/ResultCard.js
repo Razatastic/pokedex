@@ -3,12 +3,12 @@ import "./styles/Card.css";
 
 class ResultCard extends Component {
   render() {
-    const { pokemonName, pokemonData } = this.props;
-    const { id, height, type, sprite } = pokemonData;
+    const { pokemonData } = this.props;
+    const { name, id, height, type, sprite } = pokemonData;
 
     return (
       <div className="card">
-        <h1>{pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}</h1>
+        <h1>{name}</h1>
         <img src={sprite} alt="pokemon-pic" />
         <ul>
           <li>

@@ -13,35 +13,36 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      pokemonName: "mewtwo",
-      pokemon: {}
+      pokemonName: "charizard",
+      pokemonObject: {}
     };
-
-    this.handleOnClick = this.handleOnClick.bind(this);
-  }
-
-  handleOnClick(id) {
-    console.log(id);
+    this.updatePokemon = this.updatePokemon.bind(this);
   }
 
   componentDidMount() {
     axios.get(url + this.state.pokemonName).then(res => {
-      const pokemon = new PokemonHelper(res.data);
-      this.setState({ pokemon });
+      const pokemonObject = new PokemonHelper(res.data);
+      this.setState({ pokemonObject });
+    });
+  }
+
+  updatePokemon(userInput) {
+    this.setState({
+      pokemonName: userInput
     });
   }
 
   render() {
-    const { pokemonName, pokemon } = this.state;
+    const { pokemonObject } = this.state;
     return (
       <div className="vertical-center">
         <div className="flex-row">
           <div className="flex-large vertical-center">
             <img className="pokedex" src={pokedexLogo} alt="pokedex icon" />
-            <Form inputData={pokemonName} handleOnClick={this.handleOnClick} />
+            <Form updatePokemon={this.updatePokemon} />
           </div>
           <div className="flex-large vertical-center">
-            <ResultCard pokemonName={pokemonName} pokemonData={pokemon} />
+            <ResultCard pokemonData={pokemonObject} />
           </div>
         </div>
       </div>
