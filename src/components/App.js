@@ -6,12 +6,13 @@ import Form from "./Form";
 import ResultCard from "./ResultCard";
 import pokedexLogo from "../images/pin-drop.svg";
 import PokemonHelper from "./PokemonHelper";
+import ReactDOM from "react-dom";
 
 const url = "https://pokeapi.co/api/v2/pokemon/"; // PokeAPI Link
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       pokemonName: "charizard",
       pokemonObject: {}
@@ -19,17 +20,24 @@ class App extends Component {
     this.updatePokemon = this.updatePokemon.bind(this);
   }
 
-  componentDidMount() {
-    axios.get(url + this.state.pokemonName).then(res => {
-      const pokemonObject = new PokemonHelper(res.data);
-      this.setState({ pokemonObject });
-    });
-  }
-
   updatePokemon(userInput) {
     this.setState({
       pokemonName: userInput
     });
+    this.componentDidMount();
+    ReactDOM.render(<App />, document.getElementById("root"));
+  }
+
+  componentDidMount() {
+    axios
+      .get(url + this.state.pokemonName)
+      .then(res => {
+        const pokemonObject = new PokemonHelper(res.data);
+        this.setState({ pokemonObject });
+      })
+      .catch(function(error) {
+        alert("Please enter a valid Pokemon and try again");
+      });
   }
 
   render() {
