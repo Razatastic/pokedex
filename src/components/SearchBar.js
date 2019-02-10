@@ -3,7 +3,7 @@ import pokeball from "../images/pokeball.svg";
 
 const SearchBar = props => {
   return (
-    <div className="">
+    <div className="vertical-center">
       <input
         className="userInput"
         type="text"

@@ -26,7 +26,7 @@ class Form extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label className="vertical-center greeting">
+        <label className="greeting">
           <Typing keyDelay={75}>
             What Pokémon would you like to know about?
           </Typing>
