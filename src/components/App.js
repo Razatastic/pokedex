@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles/primitive.css";
+import "./styles/Primitive.css";
 import "./styles/main.css";
 import axios from "axios";
 import Form from "./Form";
