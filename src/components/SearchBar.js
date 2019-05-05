@@ -1,27 +1,25 @@
 import React from "react";
-import pokeball from "../images/pokeball.svg";
+import pokeball from "../assets/pokeball.svg";
 
-const SearchBar = props => {
-  return (
-    <div className="vertical-center">
-      <input
-        className="userInput"
-        type="text"
-        name="pokemon"
-        value={props.userInput}
-        onChange={props.handleChange}
-        placeholder={"Enter your pokémon"}
-      />
+const SearchBar = ({ userInput, handleChange, handleSubmit }) => (
+  <div className="searchbar-container">
+    <input
+      className="text-box"
+      type="text"
+      name="pokemon"
+      value={userInput}
+      onChange={handleChange}
+      placeholder={"Enter your pokémon"}
+    />
 
-      <img
-        className="pokeball"
-        type="image"
-        src={pokeball}
-        alt="pokeball submit button"
-        onClick={props.handleSubmit}
-      />
-    </div>
-  );
-};
+    <img
+      className="pokeball"
+      type="image"
+      src={pokeball}
+      alt="pokeball submit button"
+      onClick={handleSubmit}
+    />
+  </div>
+);
 
 export default SearchBar;
