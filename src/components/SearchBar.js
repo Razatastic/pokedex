@@ -4,7 +4,7 @@ import pokeball from "../assets/pokeball.svg";
 const SearchBar = ({ userInput, handleChange, handleSubmit }) => (
   <div className="searchbar-container">
     <input
-      className="text-box"
+      className="user-input"
       type="text"
       name="pokemon"
       value={userInput}

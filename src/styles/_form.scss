@@ -8,19 +8,21 @@
   margin-bottom: 20px;
   text-align: center;
 }
+.searchbar-container {
+  display: flex;
+  align-items: center;
+}
 
-.userInput {
+.user-input {
+  width: 20vw;
   border-radius: 10px;
   font-size: 1em;
-  width: 20vw;
   text-align: center;
   border-color: white;
-  margin-bottom: 20px;
-  display: inline-block;
 }
 
 .pokeball {
   width: 40px;
-  margin: 0px 0px 19px 18px;
   cursor: pointer;
+  margin-left: 12px;
 }

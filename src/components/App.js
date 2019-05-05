@@ -32,25 +32,14 @@ function App() {
   };
 
   return (
-    // <div className="container-div flex-row" style={{ display: "grid" }}>
-    //   {/* User Input */}
-    //   <div className="main-div flex-small vertical-center">
-    //     <img className="pokedex" src={pokedexLogo} alt="pokedex icon" />
-    //     <Form updatePokemon={updatePokemon} />
-    //   </div>
-    //   {/* Result */}
-    //   <div className="main-div flex-large vertical-center">
-    //     <ResultCard pokemonData={pokemonObject} />
-    //   </div>
-    // </div>
-    <div className="row">
+    <div className="container-div flex-row">
       {/* User Input */}
-      <div className="column">
+      <div className="main-div flex-small vertical-center">
         <img className="pokedex" src={pokedexLogo} alt="pokedex icon" />
         <Form updatePokemon={updatePokemon} />
       </div>
       {/* Result */}
-      <div className="column">
+      <div className="main-div flex-large vertical-center">
         <ResultCard pokemonData={pokemonObject} />
       </div>
     </div>
