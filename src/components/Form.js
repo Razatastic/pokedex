@@ -14,6 +14,9 @@ const Container = styled.form`
 
 const Greeting = styled.label`
   font-size: 1em;
+  @media (min-width: 1200px) {
+    font-size: 2em;
+  }
 `;
 
 function Form({ updatePokemon }) {
