@@ -2,10 +2,18 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Form from "./Form";
 import ResultCard from "./ResultCard";
-import pokedexLogo from "../assets/pin-drop.svg";
 import PokemonHelper from "./PokemonHelper";
+import styled from "styled-components";
 
 const url = "https://pokeapi.co/api/v2/pokemon/"; // PokeAPI Link
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
 
 function App() {
   const [pokemonName, setPokemonName] = useState("mew");
@@ -32,17 +40,10 @@ function App() {
   };
 
   return (
-    <div className="container-div flex-row">
-      {/* User Input */}
-      <div className="main-div flex-small vertical-center">
-        <img className="pokedex" src={pokedexLogo} alt="pokedex icon" />
-        <Form updatePokemon={updatePokemon} />
-      </div>
-      {/* Result */}
-      <div className="main-div flex-large vertical-center">
-        <ResultCard pokemonData={pokemonObject} />
-      </div>
-    </div>
+    <Container>
+      <Form updatePokemon={updatePokemon} />
+      <ResultCard pokemonData={pokemonObject} />
+    </Container>
   );
 }
 
