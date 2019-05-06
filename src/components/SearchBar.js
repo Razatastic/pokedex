@@ -16,6 +16,12 @@ const Input = styled.input`
   font-size: 1em;
   text-align: center;
   border-color: white;
+  @media (min-width: 900px) {
+    width: 35vw;
+  }
+  @media (min-width: 1700px) {
+    width: 25vw;
+  }
 `;
 
 const Image = styled.img`
